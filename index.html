@@ -5,7 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Udayapur Post - Latest News from Udayapur</title>
     <meta name="description" content="Get the latest news, updates, and stories from Udayapur district">
+    <meta name="keywords" content="Udayapur, Gaighat, Nepal news, local news, Udayapur Post">
+    <meta name="author" content="Khemraj Phuyal">
+    
+    <!-- Security Meta Tags -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' https:; img-src 'self' https: data:;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 </head>
 <body>
     <!-- Header Section -->
@@ -14,13 +25,19 @@
             <div class="nav-container">
                 <div class="logo">
                     <h1>Udayapur Post</h1>
+                    <span class="domain">khemrajphuyal.com.np</span>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#news">News</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#news" class="nav-link">News</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </nav>
     </header>
@@ -28,11 +45,17 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <img src="Gaighat.jpeg" alt="Gaighat, Udayapur" class="hero-image">
+            <div class="hero-image-container">
+                <img src="assets/Gaighat.jpeg" alt="Gaighat, Udayapur - Beautiful landscape of Udayapur district" class="hero-image" loading="lazy">
+                <div class="image-credit">Gaighat, Udayapur</div>
+            </div>
             <div class="hero-text">
                 <h2>Welcome to Udayapur Post</h2>
-                <p>Your trusted source for local news and stories from Udayapur district</p>
-                <a href="#news" class="cta-button">Read Latest News</a>
+                <p>Your trusted source for local news and stories from Udayapur district. Bringing you the latest updates from Gaighat and surrounding areas.</p>
+                <div class="hero-buttons">
+                    <a href="#news" class="cta-button">Read Latest News</a>
+                    <a href="#contact" class="cta-button secondary">Follow on Facebook</a>
+                </div>
             </div>
         </div>
     </section>
@@ -40,9 +63,11 @@
     <!-- News Section -->
     <section id="news" class="news-section">
         <div class="container">
-            <h2>Latest News</h2>
-            <div class="news-grid">
+            <h2>Latest News from Udayapur</h2>
+            <div class="section-subtitle">Stay updated with recent happenings in our district</div>
+            <div class="news-grid" id="newsGrid">
                 <!-- News articles will be loaded here by JavaScript -->
+                <div class="loading-spinner">Loading latest news...</div>
             </div>
         </div>
     </section>
@@ -51,20 +76,52 @@
     <section id="about" class="about-section">
         <div class="container">
             <h2>About Udayapur Post</h2>
-            <p>Udayapur Post is dedicated to bringing you the latest news, events, and stories from Udayapur district. We aim to keep our community informed and connected.</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Udayapur Post is your dedicated digital platform bringing the latest news, events, and stories from the heart of Udayapur district. Based in Gaighat, we strive to keep our community informed, connected, and engaged.</p>
+                    <p>Our mission is to provide accurate, timely, and relevant information that matters to the people of Udayapur. From local governance and development projects to cultural events and community stories, we cover it all.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <h3>📰 Local News</h3>
+                            <p>Comprehensive coverage of Udayapur district</p>
+                        </div>
+                        <div class="feature">
+                            <h3>🌍 Community Focus</h3>
+                            <p>Stories that matter to our local community</p>
+                        </div>
+                        <div class="feature">
+                            <h3>⚡ Timely Updates</h3>
+                            <p>Fresh content regularly updated</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2>Contact Us</h2>
+            <h2>Connect With Us</h2>
             <div class="contact-content">
-                <div class="social-links">
-                    <h3>Follow us on Facebook</h3>
-                    <a href="https://facebook.com/your-page" target="_blank" class="facebook-link">
-                        Visit Our Facebook Page
-                    </a>
+                <div class="contact-info">
+                    <h3>Stay Connected</h3>
+                    <p>Follow our Facebook page for real-time updates and community discussions.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/UdayapurPost" target="_blank" rel="noopener noreferrer" class="facebook-link">
+                            <span class="social-icon">📘</span>
+                            Visit Our Facebook Page
+                        </a>
+                        <a href="https://facebook.com/UdayapurPost" target="_blank" rel="noopener noreferrer" class="social-link">
+                            Like & Follow for Updates
+                        </a>
+                    </div>
+                </div>
+                <div class="security-badge">
+                    <div class="secure-site">
+                        <span class="lock-icon">🔒</span>
+                        <span>Secure HTTPS Connection</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -73,8 +130,27 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Udayapur Post. All rights reserved.</p>
-            <p>Domain: khemrajphuyal.com.np</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Udayapur Post</h3>
+                    <p>Your trusted news source from Udayapur district</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <a href="https://facebook.com/UdayapurPost" target="_blank" rel="noopener noreferrer">Facebook Page</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Website</h3>
+                    <p>khemrajphuyal.com.np</p>
+                    <div class="ssl-status">
+                        <span class="secure-badge">🔒 Secure</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Udayapur Post. All rights reserved.</p>
+                <p>Powered by Cloudflare & GitHub Pages | Secured with HTTPS</p>
+            </div>
         </div>
     </footer>
 
