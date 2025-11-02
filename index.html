@@ -3,86 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Udayapur Post - Your Trusted News Source</title>
+    <title>Blue News Network</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="top-bar">
-            <div class="container top-bar-content">
-                <div class="date">Sunday, November 2, 2025</div>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/Udayapurpost" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="main-header">
-            <div class="container header-content">
+        <div class="container">
+            <div class="header-content">
                 <div class="logo">
-                    <img src="https://via.placeholder.com/60x60/1a365d/ffffff?text=UP" alt="Udayapur Post Logo">
-                    <div class="logo-text">
-                        <h1>Udayapur Post</h1>
-                        <p>Your Trusted News Source</p>
-                    </div>
+                    <i class="fas fa-newspaper"></i>
+                    <h1>Blue News Network</h1>
                 </div>
-                <div class="ad-space">
-                    Advertisement Space - 728x90
+                <div class="social-buttons">
+                    <a href="https://facebook.com" class="social-btn facebook" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                        Follow on Facebook
+                    </a>
+                    <a href="mailto:contact@bluenews.com" class="social-btn gmail">
+                        <i class="fas fa-envelope"></i>
+                        Contact via Gmail
+                    </a>
                 </div>
             </div>
         </div>
-        
-        <nav>
-            <div class="container">
-                <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li>
-                        <a href="#">News <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown">
-                            <li><a href="#">Politics</a></li>
-                            <li><a href="#">Business</a></li>
-                            <li><a href="#">Technology</a></li>
-                            <li><a href="#">Entertainment</a></li>
-                            <li><a href="#">Sports</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Local</a></li>
-                    <li><a href="#">National</a></li>
-                    <li><a href="#">International</a></li>
-                    <li><a href="#">Opinion</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Navigation -->
+    <nav>
         <div class="container">
-            <h2>Breaking News: Major Development in Udayapur</h2>
-            <p>Stay informed with the latest news, updates, and stories from Udayapur and beyond.</p>
-            <a href="#" class="btn">Read Full Story</a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Breaking News</a></li>
+                <li><a href="#">Politics</a></li>
+                <li><a href="#">Technology</a></li>
+                <li><a href="#">Entertainment</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Health</a></li>
+            </ul>
         </div>
-    </section>
+    </nav>
 
-    <!-- Featured News Section -->
-    <section class="container">
-        <div class="section-title">
-            <h2>Featured News</h2>
-        </div>
-        
-        <div class="news-container">
-            <div class="featured-news">
-                <div class="news-card large">
-                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80');"></div>
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2>Breaking: Major Climate Agreement Reached</h2>
+            <p>World leaders unite on ambitious plan to combat climate change with groundbreaking policies and investments in green technology.</p>
+            <a href="#" class="cta-button">Read Full Story</a>
+        </section>
+
+        <!-- Featured News -->
+        <section class="news-section">
+            <div class="section-title">
+                <h2>Top Stories</h2>
+            </div>
+            
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                        <span class="news-category">Technology</span>
+                    </div>
                     <div class="news-content">
-                        <span class="news-category">Politics</span>
-                        <h3>Local Elections Bring New Leadership to Udayapur</h3>
-                        <p>Residents of Udayapur have elected new representatives in the recent local elections, marking a significant shift in the region's political landscape.</p>
+                        <h3>New AI Model Breaks Performance Records</h3>
+                        <p>Researchers announce breakthrough in artificial intelligence with model that outperforms humans in complex reasoning tasks.</p>
                         <div class="news-meta">
                             <span><i class="far fa-clock"></i> 2 hours ago</span>
                             <span><i class="far fa-eye"></i> 1,245 views</span>
@@ -91,258 +76,167 @@
                 </div>
                 
                 <div class="news-card">
-                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1073&q=80');"></div>
+                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                        <span class="news-category">Sports</span>
+                    </div>
                     <div class="news-content">
-                        <span class="news-category">Business</span>
-                        <h3>New Market Complex to Boost Local Economy</h3>
-                        <p>The construction of a modern market complex is expected to create hundreds of jobs and stimulate economic growth in the region.</p>
+                        <h3>Underdog Team Wins Championship</h3>
+                        <p>In a stunning upset, the underdog team claims victory in the national championship after a dramatic final match.</p>
                         <div class="news-meta">
                             <span><i class="far fa-clock"></i> 5 hours ago</span>
-                            <span><i class="far fa-eye"></i> 892 views</span>
+                            <span><i class="far fa-eye"></i> 3,421 views</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="news-card">
-                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1541336032412-2048a678540d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80');"></div>
+                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1551135049-8a33b42738b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                        <span class="news-category">Politics</span>
+                    </div>
                     <div class="news-content">
-                        <span class="news-category">Education</span>
-                        <h3>School Renovation Project Nears Completion</h3>
-                        <p>Several schools in Udayapur are undergoing major renovations to provide better learning environments for students.</p>
+                        <h3>New Policy Aims to Reduce Inequality</h3>
+                        <p>Government introduces comprehensive plan to address economic disparities and improve social mobility.</p>
                         <div class="news-meta">
                             <span><i class="far fa-clock"></i> 1 day ago</span>
-                            <span><i class="far fa-eye"></i> 1,543 views</span>
+                            <span><i class="far fa-eye"></i> 2,187 views</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                        <span class="news-category">Science</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Breakthrough in Renewable Energy Storage</h3>
+                        <p>Scientists develop new battery technology that could revolutionize how we store and use renewable energy.</p>
+                        <div class="news-meta">
+                            <span><i class="far fa-clock"></i> 3 hours ago</span>
+                            <span><i class="far fa-eye"></i> 1,876 views</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                        <span class="news-category">Health</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>New Treatment Shows Promise for Rare Disease</h3>
+                        <p>Clinical trials reveal significant improvements in patients with previously untreatable condition.</p>
+                        <div class="news-meta">
+                            <span><i class="far fa-clock"></i> 8 hours ago</span>
+                            <span><i class="far fa-eye"></i> 2,543 views</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                        <span class="news-category">Business</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Global Markets React to New Trade Agreement</h3>
+                        <p>Stock markets show positive movement as international trade barriers are reduced.</p>
+                        <div class="news-meta">
+                            <span><i class="far fa-clock"></i> 6 hours ago</span>
+                            <span><i class="far fa-eye"></i> 3,210 views</span>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="sidebar">
-                <h3 class="sidebar-title">Trending Now</h3>
-                <ul class="trending-news">
-                    <li>
-                        <a href="#">
-                            <span class="trending-number">1</span>
-                            <span>Flood Relief Efforts Underway in Eastern Regions</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="trending-number">2</span>
-                            <span>New Highway Project to Connect Udayapur with Major Cities</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="trending-number">3</span>
-                            <span>Local Artist Gains International Recognition</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="trending-number">4</span>
-                            <span>Agricultural Fair Attracts Thousands of Visitors</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="trending-number">5</span>
-                            <span>Health Department Launches New Vaccination Drive</span>
-                        </a>
-                    </li>
-                </ul>
-                
-                <div class="ad-space" style="margin-top: 30px; height: 250px;">
-                    Advertisement Space - 300x250
+        </section>
+
+        <!-- Interactive Section -->
+        <section class="interactive-section">
+            <div class="poll">
+                <h3>Daily Poll</h3>
+                <p>What is the most important issue facing our country today?</p>
+                <div class="poll-options">
+                    <div class="poll-option" data-option="economy">
+                        <i class="far fa-circle"></i>
+                        <span>Economy & Jobs</span>
+                    </div>
+                    <div class="poll-option" data-option="climate">
+                        <i class="far fa-circle"></i>
+                        <span>Climate Change</span>
+                    </div>
+                    <div class="poll-option" data-option="healthcare">
+                        <i class="far fa-circle"></i>
+                        <span>Healthcare</span>
+                    </div>
+                    <div class="poll-option" data-option="education">
+                        <i class="far fa-circle"></i>
+                        <span>Education</span>
+                    </div>
+                </div>
+                <div class="poll-results">
+                    <h4>Poll Results</h4>
+                    <div class="result">
+                        <p>Economy & Jobs <span class="percent">42%</span></p>
+                        <div class="result-bar"><div class="result-fill" data-width="42"></div></div>
+                    </div>
+                    <div class="result">
+                        <p>Climate Change <span class="percent">28%</span></p>
+                        <div class="result-bar"><div class="result-fill" data-width="28"></div></div>
+                    </div>
+                    <div class="result">
+                        <p>Healthcare <span class="percent">18%</span></p>
+                        <div class="result-bar"><div class="result-fill" data-width="18"></div></div>
+                    </div>
+                    <div class="result">
+                        <p>Education <span class="percent">12%</span></p>
+                        <div class="result-bar"><div class="result-fill" data-width="12"></div></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+            
+            <div class="newsletter">
+                <h3>Stay Informed</h3>
+                <p>Subscribe to our newsletter for daily updates</p>
+                <form class="newsletter-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <button type="submit">Subscribe Now</button>
+                </form>
+            </div>
+        </section>
 
-    <!-- Weekly News Section -->
-    <section class="weekly-news">
-        <div class="container">
+        <!-- Photos Section -->
+        <section class="photos-section">
             <div class="section-title">
-                <h2>This Week's Top Stories</h2>
+                <h2>Photo Gallery</h2>
             </div>
+            <p>Explore our collection of AI-generated images showcasing various news events and stories.</p>
             
-            <div class="news-tabs">
-                <button class="tab-btn active" data-tab="politics">Politics</button>
-                <button class="tab-btn" data-tab="business">Business</button>
-                <button class="tab-btn" data-tab="technology">Technology</button>
-                <button class="tab-btn" data-tab="sports">Sports</button>
-            </div>
-            
-            <div class="tab-content active" id="politics">
-                <div class="news-grid">
-                    <div class="news-card">
-                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1551135049-8a33b42738b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
-                        <div class="news-content">
-                            <span class="news-category">Politics</span>
-                            <h3>New Policy Aims to Boost Local Employment</h3>
-                            <p>The local government has introduced a new policy focused on creating job opportunities for youth in Udayapur.</p>
-                            <div class="news-meta">
-                                <span><i class="far fa-clock"></i> 3 days ago</span>
-                            </div>
-                        </div>
+            <div class="photos-grid">
+                <div class="photo-item" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                    <div class="photo-overlay">
+                        <h4>Future Cityscape</h4>
+                        <p>AI-generated vision of sustainable urban development</p>
                     </div>
-                    
-                    <div class="news-card">
-                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1581833973756-84de1a9d043f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
-                        <div class="news-content">
-                            <span class="news-category">Politics</span>
-                            <h3>Debate Continues on Infrastructure Development</h3>
-                            <p>Local representatives are divided on the allocation of funds for various infrastructure projects in the region.</p>
-                            <div class="news-meta">
-                                <span><i class="far fa-clock"></i> 4 days ago</span>
-                            </div>
-                        </div>
+                </div>
+                <div class="photo-item" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                    <div class="photo-overlay">
+                        <h4>Digital Revolution</h4>
+                        <p>Visualizing the impact of technology on society</p>
                     </div>
-                    
-                    <div class="news-card">
-                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1551836026-d5c8f2b5e7d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
-                        <div class="news-content">
-                            <span class="news-category">Politics</span>
-                            <h3>Community Leaders Meet to Address Local Issues</h3>
-                            <p>A summit of community leaders was held to discuss pressing issues affecting residents of Udayapur.</p>
-                            <div class="news-meta">
-                                <span><i class="far fa-clock"></i> 5 days ago</span>
-                            </div>
-                        </div>
+                </div>
+                <div class="photo-item" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                    <div class="photo-overlay">
+                        <h4>Medical Innovation</h4>
+                        <p>Breakthroughs in healthcare technology</p>
+                    </div>
+                </div>
+                <div class="photo-item" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                    <div class="photo-overlay">
+                        <h4>Renewable Energy</h4>
+                        <p>The future of clean power generation</p>
                     </div>
                 </div>
             </div>
-            
-            <div class="tab-content" id="business">
-                <div class="news-grid">
-                    <div class="news-card">
-                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80');"></div>
-                        <div class="news-content">
-                            <span class="news-category">Business</span>
-                            <h3>Local Entrepreneurs Receive Funding for Startups</h3>
-                            <p>Several young entrepreneurs from Udayapur have secured funding to launch their business ventures.</p>
-                            <div class="news-meta">
-                                <span><i class="far fa-clock"></i> 2 days ago</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="news-card">
-                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80');"></div>
-                        <div class="news-content">
-                            <span class="news-category">Business</span>
-                            <h3>Tourism Sector Shows Promising Growth</h3>
-                            <p>The tourism industry in Udayapur has seen significant growth with increased visitor numbers this season.</p>
-                            <div class="news-meta">
-                                <span><i class="far fa-clock"></i> 3 days ago</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="news-card">
-                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1011&q=80');"></div>
-                        <div class="news-content">
-                            <span class="news-category">Business</span>
-                            <h3>New Banking Services Launched in Rural Areas</h3>
-                            <p>Financial institutions have expanded their services to reach more remote areas of Udayapur.</p>
-                            <div class="news-meta">
-                                <span><i class="far fa-clock"></i> 6 days ago</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="tab-content" id="technology">
-                <div class="news-grid">
-                    <div class="news-card">
-                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
-                        <div class="news-content">
-                            <span class="news-category">Technology</span>
-                            <h3>Internet Connectivity Expanded to Remote Villages</h3>
-                            <p>New infrastructure projects are bringing high-speed internet to previously underserved areas of Udayapur.</p>
-                            <div class="news-meta">
-                                <span><i class="far fa-clock"></i> 2 days ago</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="news-card">
-                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
-                        <div class="news-content">
-                            <span class="news-category">Technology</span>
-                            <h3>Digital Literacy Program Launched for Seniors</h3>
-                            <p>A new initiative is helping older residents become more comfortable with modern technology and online services.</p>
-                            <div class="news-meta">
-                                <span><i class="far fa-clock"></i> 4 days ago</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="news-card">
-                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
-                        <div class="news-content">
-                            <span class="news-category">Technology</span>
-                            <h3>Local Tech Startup Wins National Innovation Award</h3>
-                            <p>A Udayapur-based technology company has been recognized for its innovative agricultural monitoring system.</p>
-                            <div class="news-meta">
-                                <span><i class="far fa-clock"></i> 6 days ago</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="tab-content" id="sports">
-                <div class="news-grid">
-                    <div class="news-card">
-                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
-                        <div class="news-content">
-                            <span class="news-category">Sports</span>
-                            <h3>Udayapur Football Team Wins Regional Championship</h3>
-                            <p>The local football team has brought home the regional championship title after an exciting final match.</p>
-                            <div class="news-meta">
-                                <span><i class="far fa-clock"></i> 1 day ago</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="news-card">
-                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
-                        <div class="news-content">
-                            <span class="news-category">Sports</span>
-                            <h3>New Sports Complex Construction Begins</h3>
-                            <p>Ground has been broken on a new multi-sport complex that will serve athletes of all ages in Udayapur.</p>
-                            <div class="news-meta">
-                                <span><i class="far fa-clock"></i> 3 days ago</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="news-card">
-                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
-                        <div class="news-content">
-                            <span class="news-category">Sports</span>
-                            <h3>Local Athlete Qualifies for National Competition</h3>
-                            <p>A young runner from Udayapur has qualified to represent the region in the upcoming national athletics championship.</p>
-                            <div class="news-meta">
-                                <span><i class="far fa-clock"></i> 5 days ago</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Advertisement Section -->
-    <section class="ad-section">
-        <div class="container">
-            <div class="ad-banner">
-                Advertisement Banner - 970x120
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -350,12 +244,16 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>About Us</h3>
-                    <p>Udayapur Post is your trusted source for news, information, and stories from Udayapur and beyond. We are committed to delivering accurate and timely news to our readers.</p>
-                    <div class="social-footer">
-                        <a href="https://www.facebook.com/Udayapurpost" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    <p>Blue News Network delivers accurate, timely news with a focus on integrity and comprehensive coverage of global events.</p>
+                    <div class="social-buttons">
+                        <a href="https://facebook.com" class="social-btn facebook" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                            Facebook
+                        </a>
+                        <a href="mailto:contact@bluenews.com" class="social-btn gmail">
+                            <i class="fas fa-envelope"></i>
+                            Gmail
+                        </a>
                     </div>
                 </div>
                 
@@ -363,50 +261,26 @@
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">News</a></li>
-                        <li><a href="#">Local</a></li>
-                        <li><a href="#">National</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Categories</h3>
-                    <ul class="footer-links">
+                        <li><a href="#">Breaking News</a></li>
                         <li><a href="#">Politics</a></li>
-                        <li><a href="#">Business</a></li>
                         <li><a href="#">Technology</a></li>
-                        <li><a href="#">Health</a></li>
-                        <li><a href="#">Sports</a></li>
                         <li><a href="#">Entertainment</a></li>
+                        <li><a href="#">Sports</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <ul class="contact-info">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Udayapur, Koshi Province, Nepal</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <span>+977 9841234567</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span>udayapurpost96@gmail.com</span>
-                        </li>
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 News Street, Media City</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> contact@bluenews.com</li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                © 2025 Udayapur Post. All rights reserved.
-            </div>
-            <div class="powered-by">
-                Powered by Himalayan Dragons
+                <p>&copy; 2023 Blue News Network. All rights reserved.</p>
             </div>
         </div>
     </footer>
