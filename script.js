@@ -155,4 +155,163 @@ function createNewsModal(title, category, excerpt) {
             <h2 style="color: var(--primary-blue); margin-bottom: 15px;">${title}</h2>
             <p style="margin-bottom: 20px; line-height: 1.6;">${excerpt}</p>
             <div style="margin-bottom: 20px; padding: 15px; background: var(--light-blue); border-radius: 8px;">
-                <p style="font-style: italic; margin: 0;">यो "${title}" सम्बन्ध
+                <p style="font-style: italic; margin: 0;">यो "${title}" सम्बन्धी ${category} श्रेणीको समाचारको पूर्वावलोकन हो। वास्तविक वेबसाइटमा, यसले पूर्ण लेख सामग्री देखाउनेछ।</p>
+            </div>
+            <div style="display: flex; gap: 10px; margin-top: 20px;">
+                <button style="padding: 10px 20px; background: var(--secondary-blue); color: white; border: none; border-radius: 5px; cursor: pointer; flex: 1;">Share on Facebook</button>
+                <button style="padding: 10px 20px; background: var(--nepal-green); color: white; border: none; border-radius: 5px; cursor: pointer; flex: 1;">Read Full Story</button>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    
+    // Close modal functionality
+    document.getElementById('closeModal').addEventListener('click', function() {
+        document.body.removeChild(modal);
+    });
+    
+    // Close modal when clicking outside
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            document.body.removeChild(modal);
+        }
+    });
+}
+
+// Helper function to create image viewer
+function createImageViewer(title, description, imageName) {
+    const viewer = document.createElement('div');
+    viewer.className = 'image-viewer';
+    viewer.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.9);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    `;
+    
+    viewer.innerHTML = `
+        <div style="max-width: 90%; max-height: 80%; display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 100%; max-width: 500px; height: 300px; background: linear-gradient(135deg, #4f46e5, #7c3aed); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin-bottom: 20px;">
+                <div style="text-align: center;">
+                    <i class="fas fa-image" style="font-size: 3rem; margin-bottom: 10px;"></i>
+                    <div>${imageName}</div>
+                </div>
+            </div>
+            <div style="color: white; text-align: center; margin-bottom: 20px;">
+                <h3>${title}</h3>
+                <p>${description}</p>
+                <p style="font-size: 0.9rem; margin-top: 10px; color: #d1d5db;">[यो वास्तविक वेबसाइटमा, यसले वास्तविक तस्बिर देखाउनेछ]</p>
+            </div>
+            <button id="closeViewer" style="padding: 10px 20px; background: var(--secondary-blue); color: white; border: none; border-radius: 5px; cursor: pointer;">बन्द गर्नुहोस्</button>
+        </div>
+    `;
+    
+    document.body.appendChild(viewer);
+    
+    // Close viewer functionality
+    document.getElementById('closeViewer').addEventListener('click', function() {
+        document.body.removeChild(viewer);
+    });
+    
+    // Close viewer when clicking outside
+    viewer.addEventListener('click', function(e) {
+        if (e.target === viewer) {
+            document.body.removeChild(viewer);
+        }
+    });
+}
+
+// Helper function to highlight active navigation
+function highlightActiveNav(activeLink) {
+    const allNavLinks = document.querySelectorAll('.nav-links a, .footer-links a');
+    allNavLinks.forEach(link => {
+        link.style.backgroundColor = '';
+    });
+    activeLink.style.backgroundColor = 'var(--accent-blue)';
+}
+
+// Helper function to scroll to section
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        // Fallback for sections that don't have IDs
+        if (sectionId === 'home') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else if (sectionId === 'news') {
+            document.querySelector('.news-section').scrollIntoView({ behavior: 'smooth' });
+        } else if (sectionId === 'tourism') {
+            document.querySelector('.photos-section').scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+    
+    // Show notification
+    const sectionNames = {
+        'home': 'गृह पृष्ठ',
+        'breaking-news': 'ताजा समाचार',
+        'politics': 'राजनीति',
+        'local-news': 'स्थानीय समाचार',
+        'tourism': 'पर्यटन',
+        'culture': 'संस्कृति',
+        'sports': 'खेलकुद'
+    };
+    
+    const sectionName = sectionNames[sectionId] || sectionId;
+    showNotification(`${sectionName} सेक्सन लोड हुँदैछ...`);
+}
+
+// Helper function to show notifications
+function showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 15px 20px;
+        background-color: ${type === 'success' ? 'var(--nepal-green)' : 'var(--secondary-blue)'};
+        color: white;
+        border-radius: 5px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        z-index: 1001;
+        max-width: 300px;
+    `;
+    notification.textContent = message;
+    
+    document.body.appendChild(notification);
+    
+    // Remove notification after 3 seconds
+    setTimeout(() => {
+        if (document.body.contains(notification)) {
+            document.body.removeChild(notification);
+        }
+    }, 3000);
+}
+
+// Additional utility function to load more news (for future implementation)
+function loadMoreNews() {
+    // This function can be expanded to fetch more news from an API
+    showNotification('थप समाचार लोड हुँदैछ...', 'info');
+    
+    // Simulate API call
+    setTimeout(() => {
+        showNotification('थप समाचार सफलतापूर्वक लोड भयो!', 'success');
+    }, 1500);
+}
+
+// Export functions for potential use in other scripts
+window.UdayapurPost = {
+    loadMoreNews,
+    showNotification,
+    initPoll,
+    initNewsletter
+};
