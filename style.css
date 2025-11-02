@@ -11,6 +11,8 @@
     --accent-blue: #60a5fa;
     --light-blue: #dbeafe;
     --dark-blue: #1e40af;
+    --nepal-green: #059669;
+    --nepal-red: #dc2626;
     --text-dark: #1f2937;
     --text-light: #6b7280;
     --white: #ffffff;
@@ -60,6 +62,16 @@ header {
 
 .logo h1 {
     font-size: 1.8rem;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text span {
+    font-size: 0.8rem;
+    color: var(--light-blue);
 }
 
 .social-buttons {
@@ -124,7 +136,7 @@ nav {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.9)), url('https://images.unsplash.com/photo-1585829365295-ab7cd400c167?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+    background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.9));
     background-size: cover;
     background-position: center;
     color: var(--white);
@@ -133,6 +145,24 @@ nav {
     border-radius: 10px;
     margin: 20px 0;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" opacity="0.1"><path d="M0,0 L1200,800 L0,800 Z" fill="white"/><path d="M1200,0 L0,800 L1200,800 Z" fill="white"/></svg>');
+    background-size: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 .hero h2 {
@@ -145,6 +175,19 @@ nav {
     font-size: 1.2rem;
     max-width: 700px;
     margin: 0 auto 30px;
+}
+
+.location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    font-size: 1rem;
+}
+
+.location i {
+    color: var(--accent-blue);
 }
 
 .cta-button {
@@ -271,11 +314,29 @@ nav {
     position: relative;
     cursor: pointer;
     transition: all 0.3s ease;
+    background-color: #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    font-weight: 600;
 }
 
 .photo-item:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.photo-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.photo-placeholder i {
+    font-size: 2rem;
+    color: var(--text-light);
 }
 
 .photo-overlay {
@@ -443,6 +504,13 @@ footer {
     text-align: center;
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    color: var(--light-blue);
+}
+
+.powered-by {
+    text-align: center;
+    margin-top: 10px;
     font-size: 0.9rem;
     color: var(--light-blue);
 }
