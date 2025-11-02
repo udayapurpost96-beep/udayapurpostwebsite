@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blue News Network</title>
+    <title>Udayapur Post - Trusted News Source from Gaighat</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,14 +14,17 @@
             <div class="header-content">
                 <div class="logo">
                     <i class="fas fa-newspaper"></i>
-                    <h1>Blue News Network</h1>
+                    <div class="logo-text">
+                        <h1>Udayapur Post</h1>
+                        <span>Trusted News Source from Gaighat</span>
+                    </div>
                 </div>
                 <div class="social-buttons">
-                    <a href="https://facebook.com" class="social-btn facebook" target="_blank">
+                    <a href="https://www.facebook.com/Udayapurpost" class="social-btn facebook" target="_blank">
                         <i class="fab fa-facebook-f"></i>
                         Follow on Facebook
                     </a>
-                    <a href="mailto:contact@bluenews.com" class="social-btn gmail">
+                    <a href="mailto:udayapurpost96@gmail.com" class="social-btn gmail">
                         <i class="fas fa-envelope"></i>
                         Contact via Gmail
                     </a>
@@ -34,13 +37,13 @@
     <nav>
         <div class="container">
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Breaking News</a></li>
-                <li><a href="#">Politics</a></li>
-                <li><a href="#">Technology</a></li>
-                <li><a href="#">Entertainment</a></li>
-                <li><a href="#">Sports</a></li>
-                <li><a href="#">Health</a></li>
+                <li><a href="#" data-section="home">Home</a></li>
+                <li><a href="#" data-section="breaking-news">Breaking News</a></li>
+                <li><a href="#" data-section="politics">Politics</a></li>
+                <li><a href="#" data-section="local-news">Local News</a></li>
+                <li><a href="#" data-section="tourism">Tourism</a></li>
+                <li><a href="#" data-section="culture">Culture</a></li>
+                <li><a href="#" data-section="sports">Sports</a></li>
             </ul>
         </div>
     </nav>
@@ -48,26 +51,32 @@
     <!-- Main Content -->
     <div class="container">
         <!-- Hero Section -->
-        <section class="hero">
-            <h2>Breaking: Major Climate Agreement Reached</h2>
-            <p>World leaders unite on ambitious plan to combat climate change with groundbreaking policies and investments in green technology.</p>
-            <a href="#" class="cta-button">Read Full Story</a>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h2>Welcome to Udayapur Post</h2>
+                <p>Your trusted source for news, events, and stories from Gaighat, Udayapur, and Koshi Province</p>
+                <div class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Gaighat, Udayapur, Koshi Province, Nepal - Postal Code: 56300</span>
+                </div>
+                <a href="#news" class="cta-button">Read Latest News</a>
+            </div>
         </section>
 
         <!-- Featured News -->
-        <section class="news-section">
+        <section class="news-section" id="news">
             <div class="section-title">
-                <h2>Top Stories</h2>
+                <h2>Latest News from Udayapur</h2>
             </div>
             
             <div class="news-grid">
                 <div class="news-card">
-                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
-                        <span class="news-category">Technology</span>
+                    <div class="news-image" style="background-color: #4f46e5;">
+                        <span class="news-category">Local News</span>
                     </div>
                     <div class="news-content">
-                        <h3>New AI Model Breaks Performance Records</h3>
-                        <p>Researchers announce breakthrough in artificial intelligence with model that outperforms humans in complex reasoning tasks.</p>
+                        <h3>New Infrastructure Projects in Gaighat</h3>
+                        <p>Municipality announces development plans for road expansion and public facilities in the Gaighat area.</p>
                         <div class="news-meta">
                             <span><i class="far fa-clock"></i> 2 hours ago</span>
                             <span><i class="far fa-eye"></i> 1,245 views</span>
@@ -76,70 +85,70 @@
                 </div>
                 
                 <div class="news-card">
-                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
-                        <span class="news-category">Sports</span>
+                    <div class="news-image" style="background-color: #059669;">
+                        <span class="news-category">Tourism</span>
                     </div>
                     <div class="news-content">
-                        <h3>Underdog Team Wins Championship</h3>
-                        <p>In a stunning upset, the underdog team claims victory in the national championship after a dramatic final match.</p>
+                        <h3>Rautamai Festival Attracts Thousands</h3>
+                        <p>Annual religious and cultural festival at Rautamai sees record participation from locals and tourists.</p>
                         <div class="news-meta">
-                            <span><i class="far fa-clock"></i> 5 hours ago</span>
+                            <span><i class="far fa-clock"></i> 1 day ago</span>
                             <span><i class="far fa-eye"></i> 3,421 views</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="news-card">
-                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1551135049-8a33b42738b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                    <div class="news-image" style="background-color: #dc2626;">
                         <span class="news-category">Politics</span>
                     </div>
                     <div class="news-content">
-                        <h3>New Policy Aims to Reduce Inequality</h3>
-                        <p>Government introduces comprehensive plan to address economic disparities and improve social mobility.</p>
+                        <h3>Local Elections Bring New Leadership</h3>
+                        <p>Udayapur residents elect new representatives with focus on development and community welfare.</p>
                         <div class="news-meta">
-                            <span><i class="far fa-clock"></i> 1 day ago</span>
+                            <span><i class="far fa-clock"></i> 2 days ago</span>
                             <span><i class="far fa-eye"></i> 2,187 views</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="news-card">
-                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
-                        <span class="news-category">Science</span>
+                    <div class="news-image" style="background-color: #7c3aed;">
+                        <span class="news-category">Education</span>
                     </div>
                     <div class="news-content">
-                        <h3>Breakthrough in Renewable Energy Storage</h3>
-                        <p>Scientists develop new battery technology that could revolutionize how we store and use renewable energy.</p>
+                        <h3>New School Building Inaugurated</h3>
+                        <p>Modern educational facility opens in Triyuga Municipality to serve 500+ students.</p>
                         <div class="news-meta">
-                            <span><i class="far fa-clock"></i> 3 hours ago</span>
+                            <span><i class="far fa-clock"></i> 3 days ago</span>
                             <span><i class="far fa-eye"></i> 1,876 views</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="news-card">
-                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
-                        <span class="news-category">Health</span>
+                    <div class="news-image" style="background-color: #ea580c;">
+                        <span class="news-category">Agriculture</span>
                     </div>
                     <div class="news-content">
-                        <h3>New Treatment Shows Promise for Rare Disease</h3>
-                        <p>Clinical trials reveal significant improvements in patients with previously untreatable condition.</p>
+                        <h3>Farmers Adopt New Techniques</h3>
+                        <p>Local agricultural program introduces modern farming methods to increase yield.</p>
                         <div class="news-meta">
-                            <span><i class="far fa-clock"></i> 8 hours ago</span>
+                            <span><i class="far fa-clock"></i> 4 days ago</span>
                             <span><i class="far fa-eye"></i> 2,543 views</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="news-card">
-                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
-                        <span class="news-category">Business</span>
+                    <div class="news-image" style="background-color: #0d9488;">
+                        <span class="news-category">Health</span>
                     </div>
                     <div class="news-content">
-                        <h3>Global Markets React to New Trade Agreement</h3>
-                        <p>Stock markets show positive movement as international trade barriers are reduced.</p>
+                        <h3>New Health Post Services</h3>
+                        <p>Expanded medical services now available at community health centers across Udayapur.</p>
                         <div class="news-meta">
-                            <span><i class="far fa-clock"></i> 6 hours ago</span>
+                            <span><i class="far fa-clock"></i> 5 days ago</span>
                             <span><i class="far fa-eye"></i> 3,210 views</span>
                         </div>
                     </div>
@@ -150,50 +159,50 @@
         <!-- Interactive Section -->
         <section class="interactive-section">
             <div class="poll">
-                <h3>Daily Poll</h3>
-                <p>What is the most important issue facing our country today?</p>
+                <h3>Community Poll</h3>
+                <p>What is the most important issue for Udayapur's development?</p>
                 <div class="poll-options">
-                    <div class="poll-option" data-option="economy">
+                    <div class="poll-option" data-option="infrastructure">
                         <i class="far fa-circle"></i>
-                        <span>Economy & Jobs</span>
+                        <span>Infrastructure & Roads</span>
                     </div>
-                    <div class="poll-option" data-option="climate">
+                    <div class="poll-option" data-option="tourism">
                         <i class="far fa-circle"></i>
-                        <span>Climate Change</span>
-                    </div>
-                    <div class="poll-option" data-option="healthcare">
-                        <i class="far fa-circle"></i>
-                        <span>Healthcare</span>
+                        <span>Tourism Development</span>
                     </div>
                     <div class="poll-option" data-option="education">
                         <i class="far fa-circle"></i>
-                        <span>Education</span>
+                        <span>Education & Healthcare</span>
+                    </div>
+                    <div class="poll-option" data-option="agriculture">
+                        <i class="far fa-circle"></i>
+                        <span>Agriculture & Employment</span>
                     </div>
                 </div>
                 <div class="poll-results">
                     <h4>Poll Results</h4>
                     <div class="result">
-                        <p>Economy & Jobs <span class="percent">42%</span></p>
-                        <div class="result-bar"><div class="result-fill" data-width="42"></div></div>
+                        <p>Infrastructure & Roads <span class="percent">38%</span></p>
+                        <div class="result-bar"><div class="result-fill" data-width="38"></div></div>
                     </div>
                     <div class="result">
-                        <p>Climate Change <span class="percent">28%</span></p>
-                        <div class="result-bar"><div class="result-fill" data-width="28"></div></div>
+                        <p>Tourism Development <span class="percent">32%</span></p>
+                        <div class="result-bar"><div class="result-fill" data-width="32"></div></div>
                     </div>
                     <div class="result">
-                        <p>Healthcare <span class="percent">18%</span></p>
+                        <p>Education & Healthcare <span class="percent">18%</span></p>
                         <div class="result-bar"><div class="result-fill" data-width="18"></div></div>
                     </div>
                     <div class="result">
-                        <p>Education <span class="percent">12%</span></p>
+                        <p>Agriculture & Employment <span class="percent">12%</span></p>
                         <div class="result-bar"><div class="result-fill" data-width="12"></div></div>
                     </div>
                 </div>
             </div>
             
             <div class="newsletter">
-                <h3>Stay Informed</h3>
-                <p>Subscribe to our newsletter for daily updates</p>
+                <h3>Stay Updated</h3>
+                <p>Subscribe to Udayapur Post for daily local news</p>
                 <form class="newsletter-form">
                     <input type="text" placeholder="Your Name" required>
                     <input type="email" placeholder="Your Email" required>
@@ -203,35 +212,61 @@
         </section>
 
         <!-- Photos Section -->
-        <section class="photos-section">
+        <section class="photos-section" id="tourism">
             <div class="section-title">
-                <h2>Photo Gallery</h2>
+                <h2>Udayapur in Pictures</h2>
             </div>
-            <p>Explore our collection of AI-generated images showcasing various news events and stories.</p>
+            <p>Explore the beauty and culture of Udayapur through our photo collection</p>
             
             <div class="photos-grid">
-                <div class="photo-item" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                <div class="photo-item" data-image="intro.png">
+                    <div class="photo-placeholder">
+                        <i class="fas fa-building"></i>
+                        <span>Udayapur Post Office</span>
+                    </div>
                     <div class="photo-overlay">
-                        <h4>Future Cityscape</h4>
-                        <p>AI-generated vision of sustainable urban development</p>
+                        <h4>Udayapur Post Headquarters</h4>
+                        <p>Our office in Gaighat, Udayapur</p>
                     </div>
                 </div>
-                <div class="photo-item" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                <div class="photo-item" data-image="rauta.png">
+                    <div class="photo-placeholder">
+                        <i class="fas fa-temple"></i>
+                        <span>Rautamai Temple</span>
+                    </div>
                     <div class="photo-overlay">
-                        <h4>Digital Revolution</h4>
-                        <p>Visualizing the impact of technology on society</p>
+                        <h4>Rautamai Temple</h4>
+                        <p>Hinduism religious destination in Udayapur</p>
                     </div>
                 </div>
-                <div class="photo-item" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                <div class="photo-item" data-image="rauta2.png">
+                    <div class="photo-placeholder">
+                        <i class="fas fa-users"></i>
+                        <span>Rautamai Festival</span>
+                    </div>
                     <div class="photo-overlay">
-                        <h4>Medical Innovation</h4>
-                        <p>Breakthroughs in healthcare technology</p>
+                        <h4>Rautamai Festival</h4>
+                        <p>Cultural celebrations at Rautamai</p>
                     </div>
                 </div>
-                <div class="photo-item" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                <div class="photo-item" data-image="rauta3.png">
+                    <div class="photo-placeholder">
+                        <i class="fas fa-mountain"></i>
+                        <span>Rautamai Landscape</span>
+                    </div>
                     <div class="photo-overlay">
-                        <h4>Renewable Energy</h4>
-                        <p>The future of clean power generation</p>
+                        <h4>Rautamai Landscape</h4>
+                        <p>Scenic views of Rautamai area</p>
+                    </div>
+                </div>
+                <div class="photo-item" data-image="gadhi.png">
+                    <div class="photo-placeholder">
+                        <i class="fas fa-fort"></i>
+                        <span>Udayapurgadhi Fort</span>
+                    </div>
+                    <div class="photo-overlay">
+                        <h4>Udayapurgadhi Fort</h4>
+                        <p>Historical site in Udayapur</p>
                     </div>
                 </div>
             </div>
@@ -243,14 +278,14 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>About Us</h3>
-                    <p>Blue News Network delivers accurate, timely news with a focus on integrity and comprehensive coverage of global events.</p>
+                    <h3>About Udayapur Post</h3>
+                    <p>Udayapur Post is your trusted source for news, information, and stories from Gaighat, Udayapur, and Koshi Province. We are committed to delivering accurate and timely news to our readers.</p>
                     <div class="social-buttons">
-                        <a href="https://facebook.com" class="social-btn facebook" target="_blank">
+                        <a href="https://www.facebook.com/Udayapurpost" class="social-btn facebook" target="_blank">
                             <i class="fab fa-facebook-f"></i>
                             Facebook
                         </a>
-                        <a href="mailto:contact@bluenews.com" class="social-btn gmail">
+                        <a href="mailto:udayapurpost96@gmail.com" class="social-btn gmail">
                             <i class="fas fa-envelope"></i>
                             Gmail
                         </a>
@@ -260,27 +295,31 @@
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Breaking News</a></li>
-                        <li><a href="#">Politics</a></li>
-                        <li><a href="#">Technology</a></li>
-                        <li><a href="#">Entertainment</a></li>
-                        <li><a href="#">Sports</a></li>
+                        <li><a href="#" data-section="home">Home</a></li>
+                        <li><a href="#" data-section="breaking-news">Breaking News</a></li>
+                        <li><a href="#" data-section="local-news">Local News</a></li>
+                        <li><a href="#" data-section="politics">Politics</a></li>
+                        <li><a href="#" data-section="tourism">Tourism</a></li>
+                        <li><a href="#" data-section="culture">Culture & Heritage</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Contact Info</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> 123 News Street, Media City</li>
-                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                        <li><i class="fas fa-envelope"></i> contact@bluenews.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Gaighat, Udayapur, Koshi Province, Nepal</li>
+                        <li><i class="fas fa-mail-bulk"></i> Postal Code: 56300</li>
+                        <li><i class="fas fa-phone"></i> +977 9841234567</li>
+                        <li><i class="fas fa-envelope"></i> udayapurpost96@gmail.com</li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Blue News Network. All rights reserved.</p>
+                <p>&copy; 2025 Udayapur Post. All rights reserved.</p>
+            </div>
+            <div class="powered-by">
+                <p>Website designed and powered by Himalayan Dragons</p>
             </div>
         </div>
     </footer>
