@@ -1,407 +1,197 @@
-// Tab functionality for weekly news section
+// Interactive Poll
 document.addEventListener('DOMContentLoaded', function() {
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
+    const pollOptions = document.querySelectorAll('.poll-option');
+    const pollResults = document.querySelector('.poll-results');
+    const resultFills = document.querySelectorAll('.result-fill');
     
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Remove active class from all buttons and contents
-            tabBtns.forEach(b => b.classList.remove('active'));
-            tabContents.forEach(c => c.classList.remove('active'));
+    pollOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            // Remove selected class from all options
+            pollOptions.forEach(opt => {
+                opt.classList.remove('selected');
+                opt.querySelector('i').className = 'far fa-circle';
+            });
             
-            // Add active class to clicked button
-            btn.classList.add('active');
+            // Add selected class to clicked option
+            this.classList.add('selected');
+            this.querySelector('i').className = 'fas fa-check-circle';
             
-            // Show corresponding content
-            const tabId = btn.getAttribute('data-tab');
-            document.getElementById(tabId).classList.add('active');
+            // Show results after a delay
+            setTimeout(() => {
+                pollResults.style.display = 'block';
+                
+                // Animate the result bars
+                resultFills.forEach(fill => {
+                    const width = fill.getAttribute('data-width');
+                    setTimeout(() => {
+                        fill.style.width = width + '%';
+                    }, 200);
+                });
+            }, 500);
         });
     });
     
-    // Update date in top bar
-    function updateDate() {
-        const dateElement = document.querySelector('.date');
-        const now = new Date();
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        dateElement.textContent = now.toLocaleDateString('en-US', options);
-    }
+    // Newsletter form submission
+    const newsletterForm = document.querySelector('.newsletter-form');
+    newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = this.querySelector('input[type="text"]').value;
+        const email = this.querySelector('input[type="email"]').value;
+        
+        alert(`Thank you, ${name}! You've been subscribed with email: ${email}`);
+        this.reset();
+    });
     
-    updateDate();
-    
-    // Mobile menu functionality
-    function initMobileMenu() {
-        const nav = document.querySelector('nav');
-        const navLinks = document.querySelector('.nav-links');
-        
-        // Create mobile menu button
-        const mobileMenuBtn = document.createElement('button');
-        mobileMenuBtn.className = 'mobile-menu-btn';
-        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-        
-        // Insert mobile menu button
-        const headerContent = document.querySelector('.header-content');
-        headerContent.appendChild(mobileMenuBtn);
-        
-        // Toggle mobile menu
-        mobileMenuBtn.addEventListener('click', function() {
-            navLinks.classList.toggle('mobile-active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('mobile-active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('mobile-active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-    }
-    
-    initMobileMenu();
-    
-    // News data for dynamic content (can be replaced with API calls)
-    const newsData = {
-        featured: [
-            {
-                id: 1,
-                title: "Local Elections Bring New Leadership to Udayapur",
-                category: "Politics",
-                excerpt: "Residents of Udayapur have elected new representatives in the recent local elections, marking a significant shift in the region's political landscape.",
-                image: "https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
-                date: "2 hours ago",
-                views: "1,245"
-            },
-            {
-                id: 2,
-                title: "New Market Complex to Boost Local Economy",
-                category: "Business",
-                excerpt: "The construction of a modern market complex is expected to create hundreds of jobs and stimulate economic growth in the region.",
-                image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1073&q=80",
-                date: "5 hours ago",
-                views: "892"
-            }
-        ],
-        trending: [
-            "Flood Relief Efforts Underway in Eastern Regions",
-            "New Highway Project to Connect Udayapur with Major Cities",
-            "Local Artist Gains International Recognition",
-            "Agricultural Fair Attracts Thousands of Visitors",
-            "Health Department Launches New Vaccination Drive"
-        ]
-    };
-    
-    // Function to load more news (for demonstration)
-    function loadMoreNews() {
-        const loadMoreBtn = document.createElement('button');
-        loadMoreBtn.className = 'btn load-more-btn';
-        loadMoreBtn.textContent = 'Load More News';
-        loadMoreBtn.style.margin = '40px auto';
-        loadMoreBtn.style.display = 'block';
-        
-        const newsSection = document.querySelector('.weekly-news .container');
-        newsSection.appendChild(loadMoreBtn);
-        
-        loadMoreBtn.addEventListener('click', function() {
-            // Simulate loading more news
-            const loadingText = document.createElement('div');
-            loadingText.textContent = 'Loading more news...';
-            loadingText.style.textAlign = 'center';
-            loadingText.style.padding = '20px';
-            loadMoreBtn.parentNode.replaceChild(loadingText, loadMoreBtn);
+    // News card interactions
+    const newsCards = document.querySelectorAll('.news-card');
+    newsCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const title = this.querySelector('h3').textContent;
+            const category = this.querySelector('.news-category').textContent;
             
-            setTimeout(() => {
-                // In a real application, this would fetch new data from an API
-                alert('More news would be loaded here from your database or API');
-                location.reload(); // Refresh to show how it would work
-            }, 1500);
-        });
-    }
-    
-    loadMoreNews();
-    
-    // Advertisement rotation (placeholder functionality)
-    function rotateAds() {
-        const adSpaces = document.querySelectorAll('.ad-space, .ad-banner');
-        const adTexts = [
-            "Support Local Businesses - Advertisement",
-            "Community Event Sponsorship Available",
-            "Promote Your Service with Udayapur Post",
-            "Special Offer for Local Advertisers"
-        ];
-        
-        let currentAd = 0;
-        
-        setInterval(() => {
-            adSpaces.forEach(ad => {
-                ad.textContent = adTexts[currentAd];
-            });
+            // Create a modal-like effect
+            const modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0,0,0,0.8)';
+            modal.style.display = 'flex';
+            modal.style.justifyContent = 'center';
+            modal.style.alignItems = 'center';
+            modal.style.zIndex = '1000';
             
-            currentAd = (currentAd + 1) % adTexts.length;
-        }, 5000); // Change ad text every 5 seconds
-    }
-    
-    // Uncomment the line below to enable ad rotation
-    // rotateAds();
-    
-    // View counter simulation
-    function simulateViewCount() {
-        const viewElements = document.querySelectorAll('.news-meta span:last-child');
-        
-        viewElements.forEach(element => {
-            const currentViews = parseInt(element.textContent.replace(/\D/g, ''));
-            const newViews = currentViews + Math.floor(Math.random() * 10);
-            element.textContent = `<i class="far fa-eye"></i> ${newViews.toLocaleString()} views`;
-        });
-    }
-    
-    // Update view counts every 30 seconds (for demonstration)
-    setInterval(simulateViewCount, 30000);
-    
-    // Search functionality
-    function initSearch() {
-        const searchForm = document.createElement('form');
-        searchForm.className = 'search-form';
-        searchForm.innerHTML = `
-            <div class="search-container">
-                <input type="text" placeholder="Search for news..." class="search-input">
-                <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
-            </div>
-        `;
-        
-        const headerContent = document.querySelector('.header-content');
-        headerContent.appendChild(searchForm);
-        
-        searchForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const searchTerm = this.querySelector('.search-input').value;
-            if (searchTerm.trim()) {
-                alert(`Searching for: ${searchTerm}\n\nIn a real implementation, this would filter news articles.`);
-                // In a real app, you would filter or fetch search results here
-            }
-        });
-    }
-    
-    initSearch();
-    
-    // Newsletter subscription
-    function initNewsletter() {
-        const newsletterSection = document.createElement('section');
-        newsletterSection.className = 'newsletter';
-        newsletterSection.innerHTML = `
-            <div class="container">
-                <div class="newsletter-content">
-                    <h3>Stay Updated with Udayapur Post</h3>
-                    <p>Subscribe to our newsletter for the latest news delivered to your inbox.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Enter your email address" required>
-                        <button type="submit" class="btn">Subscribe</button>
-                    </form>
+            modal.innerHTML = `
+                <div style="background: white; padding: 30px; border-radius: 10px; max-width: 500px; text-align: center;">
+                    <h2 style="color: var(--primary-blue); margin-bottom: 15px;">${title}</h2>
+                    <p style="margin-bottom: 20px;">This is a preview of the article about "${title}" in the ${category} category.</p>
+                    <p style="margin-bottom: 20px; font-style: italic;">In a real implementation, this would show the full article content.</p>
+                    <button id="closeModal" style="padding: 10px 20px; background: var(--secondary-blue); color: white; border: none; border-radius: 5px; cursor: pointer;">Close</button>
                 </div>
-            </div>
-        `;
-        
-        // Insert before footer
-        document.querySelector('footer').before(newsletterSection);
-        
-        // Add newsletter styles
-        const newsletterStyles = `
-            .newsletter {
-                background: linear-gradient(135deg, var(--primary) 0%, #2c5282 100%);
-                color: white;
-                padding: 50px 0;
-                text-align: center;
-            }
+            `;
             
-            .newsletter-content h3 {
-                font-size: 1.8rem;
-                margin-bottom: 15px;
-            }
+            document.body.appendChild(modal);
             
-            .newsletter-content p {
-                max-width: 600px;
-                margin: 0 auto 25px;
-                font-size: 1.1rem;
-            }
+            // Close modal functionality
+            document.getElementById('closeModal').addEventListener('click', function() {
+                document.body.removeChild(modal);
+            });
             
-            .newsletter-form {
-                display: flex;
-                max-width: 500px;
-                margin: 0 auto;
-            }
-            
-            .newsletter-form input {
-                flex: 1;
-                padding: 12px 15px;
-                border: none;
-                border-radius: 4px 0 0 4px;
-                font-size: 1rem;
-            }
-            
-            .newsletter-form button {
-                border-radius: 0 4px 4px 0;
-                white-space: nowrap;
-            }
-            
-            @media (max-width: 576px) {
-                .newsletter-form {
-                    flex-direction: column;
+            // Close modal when clicking outside
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    document.body.removeChild(modal);
                 }
-                
-                .newsletter-form input,
-                .newsletter-form button {
-                    width: 100%;
-                    border-radius: 4px;
-                    margin-bottom: 10px;
-                }
-            }
-        `;
-        
-        // Add styles to document
-        const styleSheet = document.createElement('style');
-        styleSheet.textContent = newsletterStyles;
-        document.head.appendChild(styleSheet);
-        
-        // Handle newsletter form submission
-        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input').value;
-            alert(`Thank you for subscribing with: ${email}\nYou will receive our latest news updates.`);
-            this.reset();
+            });
         });
-    }
+    });
     
-    initNewsletter();
-});
-
-// Additional responsive styles for mobile menu
-const mobileStyles = `
-    .mobile-menu-btn {
-        display: none;
-        background: none;
-        border: none;
-        color: var(--primary);
-        font-size: 1.5rem;
-        cursor: pointer;
-        padding: 5px 10px;
-    }
+    // Photo gallery interactions
+    const photoItems = document.querySelectorAll('.photo-item');
+    photoItems.forEach(photo => {
+        photo.addEventListener('click', function() {
+            const title = this.querySelector('h4').textContent;
+            const description = this.querySelector('p').textContent;
+            
+            // Create image viewer
+            const viewer = document.createElement('div');
+            viewer.style.position = 'fixed';
+            viewer.style.top = '0';
+            viewer.style.left = '0';
+            viewer.style.width = '100%';
+            viewer.style.height = '100%';
+            viewer.style.backgroundColor = 'rgba(0,0,0,0.9)';
+            viewer.style.display = 'flex';
+            viewer.style.flexDirection = 'column';
+            viewer.style.justifyContent = 'center';
+            viewer.style.alignItems = 'center';
+            viewer.style.zIndex = '1000';
+            
+            const imageUrl = this.style.backgroundImage.slice(5, -2);
+            
+            viewer.innerHTML = `
+                <div style="max-width: 90%; max-height: 80%; display: flex; flex-direction: column; align-items: center;">
+                    <img src="${imageUrl}" style="max-width: 100%; max-height: 70vh; border-radius: 10px;">
+                    <div style="color: white; text-align: center; margin-top: 20px;">
+                        <h3>${title}</h3>
+                        <p>${description}</p>
+                    </div>
+                    <button id="closeViewer" style="margin-top: 20px; padding: 10px 20px; background: var(--secondary-blue); color: white; border: none; border-radius: 5px; cursor: pointer;">Close</button>
+                </div>
+            `;
+            
+            document.body.appendChild(viewer);
+            
+            // Close viewer functionality
+            document.getElementById('closeViewer').addEventListener('click', function() {
+                document.body.removeChild(viewer);
+            });
+            
+            // Close viewer when clicking outside
+            viewer.addEventListener('click', function(e) {
+                if (e.target === viewer) {
+                    document.body.removeChild(viewer);
+                }
+            });
+        });
+    });
     
-    .search-form {
-        display: none;
-        margin-top: 15px;
-        width: 100%;
-    }
+    // Social button interactions
+    const socialButtons = document.querySelectorAll('.social-btn');
+    socialButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            if (this.classList.contains('facebook')) {
+                // Track Facebook click
+                console.log('Facebook button clicked - redirecting to Facebook');
+                // In a real implementation, you might want to use analytics here
+            } else if (this.classList.contains('gmail')) {
+                // Track Gmail click
+                console.log('Gmail button clicked - opening email client');
+                // In a real implementation, you might want to use analytics here
+            }
+        });
+    });
     
-    .search-container {
-        display: flex;
-        width: 100%;
-    }
+    // Navigation interactions
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const section = this.textContent;
+            
+            // Highlight the clicked navigation item
+            navLinks.forEach(item => item.style.backgroundColor = '');
+            this.style.backgroundColor = 'var(--accent-blue)';
+            
+            // Scroll to the appropriate section (simulated)
+            if (section === 'Home') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else if (section === 'Breaking News') {
+                document.querySelector('.hero').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                document.querySelector('.news-section').scrollIntoView({ behavior: 'smooth' });
+            }
+            
+            // Show a notification
+            const notification = document.createElement('div');
+            notification.style.position = 'fixed';
+            notification.style.top = '20px';
+            notification.style.right = '20px';
+            notification.style.padding = '15px 20px';
+            notification.style.backgroundColor = 'var(--secondary-blue)';
+            notification.style.color = 'white';
+            notification.style.borderRadius = '5px';
+            notification.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
+            notification.style.zIndex = '1001';
+            notification.textContent = `Loading ${section} content...`;
+            
+            document.body.appendChild(notification);
+            
+            // Remove notification after 2 seconds
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 2000);
+        });
+    });
     
-    .search-input {
-        flex: 1;
-        padding: 8px 12px;
-        border: 1px solid #ddd;
-        border-radius: 4px 0 0 4px;
-    }
-    
-    .search-btn {
-        background: var(--secondary);
-        color: white;
-        border: none;
-        padding: 8px 15px;
-        border-radius: 0 4px 4px 0;
-        cursor: pointer;
-    }
-    
-    @media (max-width: 768px) {
-        .mobile-menu-btn {
-            display: block;
-        }
-        
-        .nav-links {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: var(--primary);
-            z-index: 1000;
-        }
-        
-        .nav-links.mobile-active {
-            display: flex;
-        }
-        
-        .nav-links li {
-            width: 100%;
-        }
-        
-        .dropdown {
-            position: static;
-            display: none;
-            width: 100%;
-            box-shadow: none;
-        }
-        
-        .nav-links li:hover .dropdown {
-            display: none;
-        }
-        
-        .nav-links li.active .dropdown {
-            display: block;
-        }
-        
-        .search-form {
-            display: block;
-        }
-        
-        .header-content {
-            flex-wrap: wrap;
-        }
-        
-        .ad-space {
-            order: 3;
-            margin-top: 15px;
-        }
-    }
-    
-    @media (max-width: 576px) {
-        .top-bar-content {
-            flex-direction: column;
-            gap: 10px;
-        }
-        
-        .news-tabs {
-            flex-wrap: wrap;
-        }
-        
-        .tab-btn {
-            padding: 8px 15px;
-        }
-        
-        .footer-content {
-            grid-template-columns: 1fr;
-        }
-        
-        .news-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-    
-    .load-more-btn {
-        background: var(--primary);
-    }
-    
-    .load-more-btn:hover {
-        background: #2c5282;
-    }
-`;
-
-// Add mobile styles to document
-document.addEventListener('DOMContentLoaded', function() {
-    const styleSheet = document.createElement('style');
-    styleSheet.textContent = mobileStyles;
-    document.head.appendChild(styleSheet);
-});
